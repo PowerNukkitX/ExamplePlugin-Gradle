@@ -1,6 +1,8 @@
 plugins {
     `java-library`
     `maven-publish`
+    idea
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 repositories {
@@ -13,16 +15,28 @@ repositories {
 
 group = "cn.powernukkitx"
 version = "1.0.0-SNAPSHOT"
-description = "powernukkitx exemple plugin"
+description = "powernukkitx example plugin"
 java.sourceCompatibility = JavaVersion.VERSION_17
 
 dependencies {
-    implementation("cn.powernukkitx:powernukkitx:1.20.50-r1")
+    //Check it out https://jitpack.io/#PowerNukkitX/PowerNukkitX
+    compileOnly("com.github.PowerNukkitX:PowerNukkitX:1d2444b781")
+}
+
+//Automatically download dependencies source code
+idea {
+    module {
+        isDownloadSources = true
+        isDownloadJavadoc = false
+    }
 }
 
 java {
     withSourcesJar()
-    withJavadocJar()
+}
+
+tasks.build {
+    dependsOn(tasks.shadowJar)
 }
 
 sourceSets {
@@ -44,4 +58,8 @@ tasks.test {
     useJUnitPlatform()
     jvmArgs(listOf("--add-opens", "java.base/java.lang=ALL-UNNAMED"))
     jvmArgs(listOf("--add-opens", "java.base/java.io=ALL-UNNAMED"))
+}
+
+tasks.withType<AbstractCopyTask>() {
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }

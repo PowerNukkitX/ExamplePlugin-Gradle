@@ -1,2 +1,2 @@
-rootProject.name = "ExamplePlugin-Maven"
+rootProject.name = "ExamplePlugin-Gradle"
 
