@@ -20,7 +20,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 dependencies {
     //Check it out https://jitpack.io/#PowerNukkitX/PowerNukkitX
-    compileOnly("com.github.PowerNukkitX:PowerNukkitX:1d2444b781")
+    compileOnly("com.github.PowerNukkitX:PowerNukkitX:master-SNAPSHOT")
 }
 
 //Automatically download dependencies source code
