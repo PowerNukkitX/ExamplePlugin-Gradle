@@ -39,24 +39,10 @@ public class EventListener implements Listener {
         this.plugin.getLogger().info(integer.getAndIncrement() + ":PlayerJoinEvent");
     }
 
-    @EventHandler(priority = EventPriority.NORMAL)
-    public void onPlayerAsyncPreLogin(PlayerAsyncPreLoginEvent event) {
-        this.plugin.getLogger().info(integer.getAndIncrement() + ":PlayerAsyncPreLoginEvent");
-    }
 
     @EventHandler(priority = EventPriority.NORMAL)
     public void onPlayerLoginEvent(PlayerLoginEvent event) {
         this.plugin.getLogger().info(integer.getAndIncrement() + ":PlayerLoginEvent");
-    }
-
-    @EventHandler(priority = EventPriority.NORMAL)
-    public void onPlayerPreLoginEvent(PlayerPreLoginEvent event) {
-        this.plugin.getLogger().info(integer.getAndIncrement() + ":PlayerPreLoginEvent");
-    }
-
-    @EventHandler(priority = EventPriority.NORMAL)
-    public void onPlayerLocallyInitialized(PlayerLocallyInitializedEvent event) {
-        this.plugin.getLogger().info(integer.getAndIncrement() + ":PlayerLocallyInitializedEvent");
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
