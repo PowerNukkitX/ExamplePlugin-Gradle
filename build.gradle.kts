@@ -17,12 +17,13 @@ repositories {
 group = "cn.powernukkitx"
 version = "1.0.0-SNAPSHOT"
 description = "powernukkitx example plugin"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_21
 
 dependencies {
     //Check it out https://jitpack.io/#PowerNukkitX/PowerNukkitX
     compileOnly("com.github.PowerNukkitX:PowerNukkitX:master-SNAPSHOT")
-//    compileOnly(files("D:\\IdeaProjects\\PowerNukkitX\\build\\powernukkitx-2.0.0-SNAPSHOT-all.jar"))
+    //local dependency
+    //compileOnly(files("D:\\IdeaProjects\\PowerNukkitX\\build\\powernukkitx-2.0.0-SNAPSHOT-all.jar"))
 }
 
 //Automatically download dependencies source code
